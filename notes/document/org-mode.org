@@ -1,0 +1,11 @@
+* take notes
+* arrangement
+#+BEGIN_SRC emacs-lisp
+(setq org-capture-templates '(("t" "Todo" entry (file+headline ""))))
+#+END_SRC
+
+(Setq org-agenda-file '("~/org"))
+
+(org-capture )
+
+

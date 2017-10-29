@@ -1,0 +1,9 @@
+[user]
+	name = userlc
+	email = userlc@china.com
+[color]
+	ui = true
+[core]
+	editor = emacs
+[alias]
+	lg = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

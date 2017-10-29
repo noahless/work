@@ -1,0 +1,435 @@
+# LISP FUNCTIONS 
+
+* data type:
+** type-of function 
+show which primitive type the object is .
+** number
+*** integer
+
+
+
+*** float-point
+
+
+
+ * temp
+** ;;privous ~privous name 
+** ;;disk file name 
+** ;;present modifying #name# 
+
+* basic functions in emacs control
+** equal and eq
+-----equal : have the same structure and the contains
+-----eq : the same objects
+** string-equal
+
+(string-equal "abc" 'abc)
+
+(equal "abc" 'abc)
+
+** message
+** set setq
+** defun defvar defcustom
+
+** while 
+-----(while predicate
+----- body)
+
+** explanatory
+** cond
+** progn
+-----return the last lines values
+(progn
+----body)
+
+** defvar
+-----initlization the variable 
+-----if the variable is exists keep it
+
+** begin something wrong with you 
+** unless
+** dolist
+* buffers and files
+# ---------files---------
+** --------files-------
+** expand-file-name 
+----arg:relativity-file-routes
+----this function transfer the relativity-file-routes to absolute-file-routes
+
+** find-file c-x c-f
+** ----------------------
+
+# --------buffers---------
+
+** get buffer name
+*** buffer-name(function)
+*** buffer-file-name(function)
+*** current-buffer(function)
+
+** switch buffer
+*** other-buffer(function)
+-----buffer number is NO1(not current buffer,but the latest buffer,not swithc);
+*** set-buffer
+-----set the current operatin buffer but not show in window(operating behind)
+*** switch-to-buffer(function)
+-----get one buffer and switch to that buffer,
+
+** get buffer size 
+*** buffer-size(function)
+
+
+# ------------------------
+
+# ---------position and mark----------------
+** buffer predicate
+*** bufferp
+** -------------------
+
+# --------buffers-------
+
+
+
+** mark buffer
+*** mark-whole-buffer
+*** mark-page
+*** mark-paragraph
+*** mark-word
+*** mark-defun
+put the mark at the end of this defun,point at beginning
+*** mark-begin-of-buffer
+-----just set mark at the beginning of buffer
+*** mark-end-of-buffer
+-----just set mark at the end of buffer
+*** mark-end-of-sentence
+    
+
+
+# -----------region operation-------
+** save buffer states(position and mark)
+*** save-excursion
+-----save the current position and the mark.
+*** push-mark
+    -----push the mark into buffer
+
+** goto buffer position
+*** goto-char(position)
+    cursor position (define in buffer.c)
+-----point: current position
+-----point-min: min points(when not narrow model,equals 1)
+-----point-max: max points
+*** beginning-of-buffer
+-----args:optional-args percentage*10%
+-----current position lies in the percentage*10% 
+if the file size more than 10000 
+*** end-of-buffer
+
+# -------------------------------------------
+**   sort-lines
+**   upcase-region
+**   list-maching-lines  acts on whole file
+**   delete-matching-lines  on region
+**   delete-non-maching-lines  on region 
+** ---------------------------
+
+
+
+
+** buffer write to bufer
+*** append-to-buffer
+-----args: destination-buffer current-position-start current-position-end 
+Append to specifiedbuffer the text of the region.
+
+*** insert-buffer-substring 
+-----args:destination-buffer current-position-start current-position-end
+
+*** insert-buffer
+-----arg:otherbuffer
+inser other buffer into current position
+
+
+*** erase-buffer
+-----clean the buffer
+
+*** copy-to-buffer
+-----args:destination-buffer current-position-start current-position-end
+-----1.erase the buffer
+-----2.insert substring to the destination-buffer
+
+
+** open buffer 
+*** get-buffer-create
+-----args:buffer/name
+if input a buffer and the buffer exists: return the buffer itself
+if inputs a buffer name and the buffer not exists: create buffer but not linked to any file,
+and return the created buffer
+
+
+*** get-buffer
+-----args: buffername 
+if the directed buffer not exists,then return nil
+else return the directed buffer
+
+** ------------------
+* system buffers
+** minibuffer
+** Help
+** scratch
+** Message
+using the view-echo-area-messages function to switch to message buffer
+
+
+** warnings
+* defined function 
+** let function 
+-----(let ((key values) (key values))
+------------(body))
+** if  (not equalmark(/= x b)) 
+-----(if (vaild)
+-------(then parts)
+-------(else parts))
+** cursor position and region 
+*** save-excursion(function)
+    -----save the cursor position and the mark position
+*** center-region
+*** count-words-region
+-----count-lines-region is an obsoleted function, using count-words-regin instead
+*** kill-region
+-----kill the region and put it in kill-ring
+*** print-region
+
+** append-to-buffer
+   -----
+* complex functions
+* narrow and with
+* car cdr cons
+* clips copy and storage 
+** variables
+*** kill-ring
+is a pointor 
+the contains like: ("text" "some")
+
+
+*** kill-ring-yank-pointor
+is a pointor  
+
+** yank 
+-----get the top of kill-ring 
+(insert(car kill-ring-yank-pointer))
+
+** yank-pop
+-----
+(insert(car kill-ring-yank-pointer))
+
+** kill-ring-yank-pointer
+
+
+** rotate-yank-pointer
+
+** insert-for-yank
+
+
+
+
+
+
+
+
+** delete-region
+-----args:begin end
+----- not copyed to the kill-ring
+
+
+** copy-region-as-kill
+-----args:clips the region to kill ring 
+
+
+** zap-to-char
+-----arg:character
+-----kill the region between current cursor 
+-----and character(the result of search-forward(character))
+
+
+* rollback text
+* regular expression
+--simple regular expression--
+** frorward-sentence
+
+
+** forward-paragraph
+
+
+--forward search--
+** re-search-forward
+
+
+** forward-paragraph-end
+
+
+* count words function
+** count-words-region
+
+
+** count-line-region
+
+
+
+
+ 
+** lengths-list-file
+
+* emacs man 
+** describe-function c-h f
+   
+** describe-variable c-h v
+* other function
+** find-tag
+** copy-to-buffer
+** what-line
+-----print both absolutely to the first line and (`````)relativity to the
+narrow region.
+
+** save-restriction 
+-----in a word:tempotory widen the buffer
+-----when current buffer becoming narrow:
+-----in the save-restriction region is widen
+-----when exit to the region,become narrow again
+
+** narrow-to-region
+-----narrow the directed region
+
+
+* datastructure
+** car
+-----get values function
+
+
+** cdr
+-----moving offset function
+
+
+** nthcdr
+-----moving n offset function
+-----args:n cons
+
+
+** cons
+-----construct element function
+** list
+-----construct collection function
+
+** setcar
+-----arg:destination-cons element
+-----reset the car
+
+** setcdr
+-----arg:destination-cons resource-cons
+-----reset the cdr
+
+
+
+
+* testcodes
+(setq temp (cons "another piece" '("a piece of text" "last piece")))
+
+(message (car (cdr temp)))
+(message (car temp))
+
+(setq vari (cons "tempfile" "ff"))
+(message (car vari))
+(message vari)
+
+(car vari)
+(cdr vari)
+
+(setq variables "temp")
+(message variables) 
+
+
+
+(setq kill-ring nil)
+
+
+* models:
+** org-model
+** company-model
+** 
+** line-number-mode
+
+* graph print functions
+** graph-body-print
+** 
+
+
+* TEST SEGMENT
+** SEG1
+   SOMETHING1
+ 
+   PARAGRAPH2
+   *SOME*
+   /some/
+   +levout+
+   _some_
+   H_2 O
+   E=mc^2
+   =git=
+** SEG2
+#+BEGIN_SRC
+
+begin src
+
+#+END_SRC
+
+** 
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+
+*** 
+
+
+* predicate functions 
+** integrep
+** floatp 
+
+
+* data structure convert:
+** string-to-number 
+** number-to-string
+
+
+* null expression
+** ()
+** nil
+** (list)
+** '()
+** --------------not nil express
+*** t
+*** 0
+*** ""
+*** [] [] is vector of 0 elements
+
+* modes 
+** auto-revert-mode 
+auto to load the file if this file has been changed
+* auto save list
+** auto-backup 
+** auto-save-interval default 300
+** save the
+** you'd better forbid the auto save 
+(setq auto-save-default nil) because the auto save doesn't save into the git
+
+* load files 
+* abbrev-mode 
+(abbrev-mode t)
+(define-abbrev-table 'global-abbrev-table '(
+                                            ("lev" "levout")
+                                           )
+)

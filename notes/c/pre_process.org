@@ -1,0 +1,15 @@
+* #define #udef
+* #error
+* #include
+* #if #else #elif #endif
+* #line number["filename"] define the __LINE__ and __FILE__
+* #pragma 
+run when compilation 
+#+BEGIN_SRC C
+#ifdef _X86
+#pragma message("X86 is activated")
+#endif
+#+END_SRC
+#pragma hdrstop
+
+

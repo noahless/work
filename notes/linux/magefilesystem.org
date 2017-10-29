@@ -1,0 +1,172 @@
+* filename 
+filename in the directory 
+** directory
+metadata
+*** data:
+ filename mapped to inode(index node)
+
+
+* file system structure
+bitmap for allocate   when delete files and allocate space, using this 
+** metadata 
+super block :show how many regions the data region is been division
+bitmap for allocate
+*** file
+file inode
+*** directory
+directory inode
+** data
+bitmap for allocate
+*** file 
+
+* VFS vitural file system
+** partion 
+block
+*** file system
+**** meta data 128 byte (inode)
+filetype permission lined times timestmap which blocks(consists the datatable)
+**** data
+block size 1k 2k 4k
+
+* link
+** hard link
+can not point to the directory
+the same inode  mapped to the file not mapped to the directory is not allowed
+** soft link(symbol link)
+can point to the directory
+point to the directory (stored the file path)  the size is the length of path
+
+* memory
+** free
+|       |    total |   used |     free | shared | buff/cache(cache the data and so on) | available |
+| Mem:  | 12186556 | 900668 |  8154468 | 208832 |                              3131420 |  10755964 |
+| Swap: | 12464124 |      0 | 12464124 |        |                                      |           |
+* linux supported file system
+** ext2 ext3 ext4
+** reiserfs
+** unix:xfs jfs
+
+
+** iso9660(dishes)
+** cluster system
+GFS2(readhat) OCFS2(oracle cluster file system)
+** network file system
+NFS CIFS
+** windows 
+vfat
+ntfs
+
+
+
+* block device 
+** lower standard 
+every sector 512 bytes
+first sector boot sector and boot loader 446byte
+the rest 64 bytes is partion table and every 16 byte can mark one partion
+the rest 2 byte is for further use
+the cylinders consists the different partion
+** extend partion 
+** according to the track to partion a block device
+** transform rate
+sata 3: 6Gbps			/dev/sda
+scsi (contain cpu) 320mbps	/dev/sda
+sas				/dev/sda
+ide ata:133mbps			/dev/hda
+** partion name
+/dev/{sda1 ,sda2 ,sda3 ,sda4}
+/dev/sda5 ---logical partion
+
+* show partion
+/proc/partitions
+partprobe: refresh the partion information to the /proc/partitions
+** fdisk 
+-l list 
+*** fdisk /dev/sda/
+-p print the partion table  --------print the partion table
+-w
+-q
+-l list all partion types
+-n new partion
+
+* create file system
+128 byte or 256 byte per inode
+** mkfs
+mkfs -t fs_type /dev/sda5  
+defaults 5% space reserve for super uer
+** block groups
+*** blocks per group
+*** blocks 
+**** block size
+***** sectors per block
+***** size for each sector    in my disk each cylinders have 16064 sectors
+** mke2fs
+-j journal
+-L lable
+-b block size  x86 platform 1k 2k 4k (memory block size 4k can not bigger than that)
+-m reserve the percentage for super user
+-i bytes-per-inode  can not less than the block size
+-N inode number  128:1
+
+** e2lable
+e2label /dev/sda5
+e2label /dev/sda5 labelname
+
+** blkid (block id)
+blkid /dev/sda5
+** tune2fs
+-l
+-L
+-j
+-m
+** dumpe2fs 
+dumpe2fs /dev/sda5
+
+* mount 
+cat /etc/mtab --this file record the file-system that be mounted on the directory
+/etc/fstab --when machine booted ,it load this file and mount according to it contains
+** mount -a
+mount -a read the /etc/fstab and mout them
+when the operation system boots it scan the /etc/fstab and mount to the file system(device , path,file system type,choice(separate by ,),the frequency of full backup 0:never 1:every day 2:intervial one day,file-system check mode: (0:not check 1:check the / other is checked by the number)
+
+umount device/umount path (this device can not be acessing)
+mount device path
+(lost and fount)
+-o access options (rw suid dev exec auto(mount -a) nouser(mount and umount) async(io=>memory=>disk) remount(not direct the mount point))
+-o ro = -r(read only)
+-n mount without write in /etc/mtab(this is necessary when /etc is a read-only file system)
+
+* fuser (identify processes using file or sockets)
+fuser -v verbose (device or path)
+-k (kill the process accessing the file) 
+-m (name specifies a file on a mounted file system or a block device)
+fuser -km filename 
+
+* swap 
+** create swap partion (sda5)
+mkswap /dev/sda5
+mkswap -l lable
+** swapon /dev/sda5
+** swapon -a
+** swapon -v
+
+** swapoff 
+
+* dd(convert and copy a file( work in binary))
+dd if=inputfile of=outputfile bs=512(read and write up to 512 byte at a time ) count=n(copy only n input blocks)
+
+dd if=/dev/sda of=/root/mbr.backup bs=512(block size * integer) count = 512
+** temp swap
+dd if=dev/zero of=/root/swap.vir bs=1M count =128
+swapon /root/swap.vir
+
+* df (report file system disk space usage)
+df -h
+df -i inode
+df -i | awk '{print $1}'
+df -i | awk '{print $NF}'
+awk -F: '{print $1}'
+awk -F: '/regular express/{print $NF}' file    -----if meets the regexp  then output it
+* du(estimate file space usage)
+** du -s file 
+summary
+** du -h

@@ -1,0 +1,21 @@
+
+* function arg
+mutiple arg
+def move(*arg)
+print arg //mitul
+
+* ite
+**
+print [x*x for ite in range(1,100,2)]
+
+
+
+* ite in linux
+[ite*ite for ite in set if ite>0]
+*  advanced function
+** map
+** reduce
+** filter
+
+** sorted(list , compare_function)
+ 

@@ -1,0 +1,6 @@
+* 
+** filesystem 
+fd = open(path,flag,mode);
+** unlink()
+
+* 

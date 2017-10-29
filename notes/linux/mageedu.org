@@ -1,0 +1,402 @@
+* interface
+** GUI Graphic User Interface
+   GNome:c gtk
+   KDE:c++ qt
+** CLI Command Line Interface
+   bash
+   zsh
+   csh
+   sh
+   tcsh
+   ksh
+* linux command 
+  \command
+** which 
+   show the full path of commands
+   while --skip-alias ls
+   \which ls
+** whereis
+   whereis is more than which
+   whereis -m manual
+   whereis -b binary path
+** who and w
+   show who is logged on
+   tty and pts
+   who -b (boot)
+   who -l (login process)
+*** fuser who is using the file or directory
+** alias 
+   alias --------this command list all the alias
+   alias cls=clear
+   unalias cls
+
+** type 
+   show command types  build in/outer/alias
+
+** man
+   whatis  keyword 
+   man chapter keyword
+   man chapter:
+   1. 
+   2. 
+   3. 
+   4. 
+   5. 
+   6. 
+   7. 
+   8. 
+   name:
+   synopsis: []optional;<>necessary;|or;{a,b,c}chose one or null;...more time
+   ...
+** history
+   M-. !n !!
+** ls
+*** -a show all the file
+*** -A not contains . and ..
+*** -l
+    -rw-------. 1 root root 8957 oct 14 19:34 boot.log
+    owner group otheruser .:not show  1:hardlinked root:owner root:group 8957:size(bytes) latest changed time
+**** -:file type
+**** d:directory type
+*** -h human-readable
+*** -ld 
+    show this director
+*** -r
+    reverse
+*** R
+    recusive
+*** -i show the inode
+** file type in linux
+   - file
+   d director
+   b block device (random access)
+   l symbolic link (soft link)
+   p pipe
+   s socker
+*** c character device (linear access) 
+    major number: this number is used to decide which drive software is been used;in other words the same type of device have the same number
+    minor number: this number is used to distinct the different device which have the same major number;
+** cat 
+   concatnate files and print it.
+
+   cat file1 file2
+
+   -n line number 
+   -E show the $
+** tac 
+   reverse the cat command according to the line 
+** file 
+   show file type
+** echo 
+   -e enable the interpreation of backslash escapes    echo "\n" "\v" and color control
+   ':strength use   not show the environment variables'$PATH'
+   ":weak use show the environment variables "$PATH"
+   ${environment variables}
+** shutdown
+   -h half +time +("wall")   time:now;hh:mm;+m
+   -P power off
+   -c cancel
+   -r reboot +time+("wall")
+** wall
+   send a message to every terminal(broadcast)
+* date commands
+** date  
+   show system clock according to the linux core frequency
+   show and change the time
+*** date
+    date format
+    %Y %m %d %H %M %S
+    date +%Y-%m-%d...
+
+    %s:  1970 1.1 0:0
+
+    change time:
+    date 1010082015.08
+**** FORMAT controls the output.  Interpreted sequences are:
+
+     %%     a literal %
+
+     %a     locale's abbreviated weekday name (e.g., Sun)
+
+     %A     locale's full weekday name (e.g., Sunday)
+
+     %b     locale's abbreviated month name (e.g., Jan)
+
+     %B     locale's full month name (e.g., January)
+
+     %c     locale's date and time (e.g., Thu Mar  3 23:05:25 2005)
+
+     %C     century; like %Y, except omit last two digits (e.g., 20)
+
+     %d     day of month (e.g., 01)
+
+     %D     date; same as %m/%d/%y
+
+     %e     day of month, space padded; same as %_d
+
+     %F     full date; same as %Y-%m-%d
+
+     %g     last two digits of year of ISO week number (see %G)
+
+     %G     year of ISO week number (see %V); normally useful only with %V
+
+     %h     same as %b
+
+     %H     hour (00..23)
+
+     %I     hour (01..12)
+
+     %j     day of year (001..366)
+
+     %k     hour, space padded ( 0..23); same as %_H
+
+     %l     hour, space padded ( 1..12); same as %_I
+
+     %m     month (01..12)
+
+     %M     minute (00..59)
+
+     %n     a newline
+
+     %N     nanoseconds (000000000..999999999)
+
+     %p     locale's equivalent of either AM or PM; blank if not known
+
+     %P     like %p, but lower case
+
+     %r     locale's 12-hour clock time (e.g., 11:11:04 PM)
+
+     %R     24-hour hour and minute; same as %H:%M
+
+     %s     seconds since 1970-01-01 00:00:00 UTC
+
+     %S     second (00..60)
+
+     %t     a tab
+
+     %T     time; same as %H:%M:%S
+
+     %u     day of week (1..7); 1 is Monday
+
+     %U     week number of year, with Sunday as first day of week (00..53)
+
+     %V     ISO week number, with Monday as first day of week (01..53)
+
+     %w     day of week (0..6); 0 is Sunday
+
+     %W     week number of year, with Monday as first day of week (00..53)
+
+     %x     locale's date representation (e.g., 12/31/99)
+
+     %X     locale's time representation (e.g., 23:13:48)
+
+     %y     last two digits of year (00..99)
+
+     %Y     year
+
+     show the time 
+
+
+
+** clock and hwclock
+   hwclock
+   -s hctosys
+   -w systohardware
+
+   show and set hardware clock
+
+   hardware clock--CPU frequency
+** cal
+   calendar
+   cal
+   cal 2005
+   cal 10 2005
+   cal day month year
+* linux structure
+  1. hardware 
+  2. core
+  3. shell and lib functions(shared functions gnu libc)
+  4. applications
+* compile types
+  compile=>binary file
+  ABI: between lib and core
+** dynamic 
+   not include packages 
+** static 
+   include packages
+
+   copy to the current 
+* terminal 
+** terminal types
+   pty (vitural terminal) telnet to the machine
+   /dev/pty/(rely on the pts)
+   /dev/pts/ 
+   /dev/tty/ (terminal teletype)
+
+* software file types 
+** config file 
+** binary file
+** lib file
+** help file
+* file type in linux
+** - file
+** d director
+** b block device (random access)
+** c character device (linear access) 
+   major number: this number is used to decide which drive software is been used;in other words the same type of device have the same number
+   minor number: this number is used to distinct the different device which have the same major number;
+** l symbolic link (soft link)
+** p pipe 
+** s socker
+* HFS
+** /root
+** /lib /lib64
+   name.so.* dynamic linked C lib
+   ld*:
+   modules:store the linux core modules
+** /media: device like cdrom 
+** /mnt: other file system tempory mount point
+** /opt: 
+** /src: service data
+** /tmp: tempory file
+** /usr: global shared data
+*** bin,sbin(share bin)
+*** lib,lib64
+*** include
+    C program head file(.h)
+*** share
+    commands help files
+*** local 
+*** src
+    program code
+** /usr/local
+   system operator install the software that is not a offical software
+** var 
+*** cache 
+    application cache data
+*** lib
+    variable state information
+*** local
+    variable data for /usr/local
+*** lock
+    lock files
+*** log
+    log files and director
+*** opt
+    variable data for /opt
+*** run 
+    data relevant to running process
+*** spool
+    application spool data
+*** tmp 
+    tempory files preserved between system reboots
+** /proc  
+   mapped to the memory;stored the information about the core and processes
+   most of this is the core parameter for instance: net.ipv4.ip_forward => net/ipv4/ip_forward,stored in the /proc/sys/
+* history
+  stored in .bash_history
+  $HISTSIZE:1000 
+  $HISTFILESIZE:2000 save 2000
+  $HISTCONTROL:ingoredups(default,)/ingore space/ignoreboth(both)
+
+  -c clear the memory
+  -d offset rows    delete in the history
+  -w write to the .bash_history
+  -r read from the .bash_history
+  history n   show n rows
+
+  !n
+  !!
+  !string
+  M-. show last parameter
+* directory management
+** mkdir
+   -p make directory and their parent
+   -v verbose
+   -m set directory mode    if not using the default 
+** rmdir
+   -p rm it and it's parent if they are not null 
+   -v verbose
+
+* regular express
+** \operation
+*** under the \ operations
+    . * + () [ ? \ ^  { |
+    {a,b} a set
+    ^$
+** character
+   [^] one character
+   \w word equals [a-z0-9A-Z]
+** repeat
+   ? 1 +
+   -------------------->ax
+   * 
+   {n}
+   {n,}>=n
+   {m,n}
+** location 
+*** ^
+*** $ 
+*** \b
+*** \B
+* command state
+  sucess 0
+  failed 1-255
+  and saved in $?
+* file operations
+  cat tac head tail more less
+
+** head and tail
+   tail -10 filename
+   -f follow(this option is designed for the increasing file)
+   head -20 filename
+** cp 
+   cp source destination
+   cp sources.... destination
+
+
+   -v verbose
+   -i interactive  for override the file   -f  override the file without the interactive
+   -r -R copy directory recusively
+
+   echo destinations | xargs -n 1 cp -v sources..
+   -d  if resource is a symbol link copy the link
+   if not use this option the system will copy the file(symbol directed) to the destination
+   -a the same as the before
+   -- preserv=
+   mode
+   ownership
+   timestaps
+   context
+   xattr
+   links
+   all
+** mv
+   -i interactive -f
+** rm
+   -r
+* stat
+  show file or directory 
+** meta data
+** data
+** three time stamps
+   access:
+   modify: modify file data
+   change: modify file data or meta data(ls -la show this)
+** touch 
+   -a refresh access time
+   -m refresh modify time
+   -c not create this file
+   -t stamp
+
+* set express
+** not a regexp
+   not a regexp it's a set express using set {} and * to express
+   ? one character
+   # note
+   ; separate commands
+   () sub shell sections
+   [1-5]
+   {} section and block
+* list file match the express
+** man 7 glob

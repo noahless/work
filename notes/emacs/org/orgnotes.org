@@ -1,0 +1,46 @@
+
+* taking notes
+** 
+* orgmode show styles
+** some styles 
+ someone\\
+hello
+*block*
+/block/
++block+
+_block_
+h_2 0
+e=mc^2 
+=git
+** list
+  load of rings
+1. ordered rings
+2.
+** out of the ordered rings
+*** *is typical the case but not contains the describations :: desc
+*** TODO 
+- the second case :: describations
+- shomething  :: describations
+- M+Ent keys as follows :: 
+- ::
+
+distributions :: 
+- [ ]
+- [ ]
+- [ ]
+
+
+#+BEGIN_SRC c -n -t -h 2 -w 2
+
+press <s tab
+#+END_SRC
+computer science 
+
+#+BEGIN_COMMENT
+
+#+END_COMMENT
+
+#+CAPTION:this is a pictures
+
+#+somewhere
+

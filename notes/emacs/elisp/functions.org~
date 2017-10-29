@@ -1,0 +1,117 @@
+* funny invoke 
+** tetris
+** calendar
+** calculator
+** list-colors-display
+
+** shell
+* window operations
+** split
+split-window-...
+** delete
+   delete-window / delete-other-window
+** switch window
+   switch to other window
+   other-window c-x 
+** changesize
+
+   
+* memory keys:
+** c-x h
+** c-x k
+kill-line
+** kill functions:
+kill-ring-save
+kill-region 
+** query-replace
+** alt-; comment-dwim
+** string-rectangle
+** kill-rectangle
+** set-buffer-file-coding-system
+change the endings between the different system
+** copy-to-register
+** insert-register
+** customize-group
+** encoding
+revert-buffer-with-coding-system  this variable is set for view the file
+set-buffer-file-coding-system this variable is set for saving the file
+buffer-file-encoding-system show the current encoding system to decode the file
+describe-coding-system describe the encoding system that is used to save the files
+set-language-environment this variable is used to permanently choose a encoding system in Emacs for opening and saving 
+list-encoding-system show the encoding system
+
+encoding customize for a file :-*- coding: utf-8 -*-
+
+
+* region operations
+many commands acts on the selected text
+** sort-lines
+** upcase-region
+** not all commands acts on region.here are some examples of commands that act on the region,for examples
+** list-matching-lines
+** delete-matching-lines
+** delete-non-matching-lines
+** It semes like that lines operations can not rely on a region
+
+* search and replace 
+** query-replace
+** comment-dwim
+* rectangle operations
+** string-rectangle
+** kill-rectangle
+* spell-checker 
+** flyspell-mode or 
+
+
+* line operations
+grep lines
+** list-matching-lines
+** delete-matching-lines
+** delete-non-matching-lines
+** delete-duplicate-lines
+
+* highlight-words
+** highlight-phrase
+** highlight-regexp
+** highlight-lines-matching-regexp
+* delete-trailing-whitespace
+* make whitespace and the tab visible
+** whitespace-mode
+* copy for multiple time use
+** copy-to-register 
+give it a single character name 
+** insert-register
+
+* universal-argument
+
+* hexl-mode
+parse file as hex encoding 
+** hexl-find-file
+open file as hex encoding
+
+* set background color 
+(setq default-frame-alist '((background-color . "cornsilk")))
+
+
+
+* book mark 
+** bookmark-set
+** bookmark-bmenu-list
+display the bookmarks
+** bookmark-jump
+jump to the bookmarks
+
+* recent open files
+* switch linear buffer 
+** next-buffer 
+** previous-buffer
+* count-words-region 
+** count the words and show the number of lines ,words and characters in the region
+
+
+
+* outline-show-all
+* outline-show-branches
+* outline-show-children
+
+* org-tree-to-indirect-buffer  

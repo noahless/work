@@ -1,0 +1,1 @@
+echo ~/ ~/.emacs.d/ |xargs -n 1 cp -v ~/study/linux/test/A.txt   ---copy to the ~/ and ~/.emacs.d

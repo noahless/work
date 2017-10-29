@@ -1,0 +1,85 @@
+* simple
+calendar q:exit
+calculatotutti'sit
+tetra
+
+dired q:exit
+list-color-display q:exit
+shell
+version
+
+* find and replace 
+** query and replace
+   query-replacel(notes: the cursor can not lies in the end of the buffer)
+   
+comment-
+
+string-rectangle
+kill-rectangle
+
+set-buffer-file-coding-system
+global-subword-mode: the cursor move into between camelcasewords
+
+** how to have spell-checker turned on 
+flyspell-mode
+flyspell-buffer
+
+** grep line
+list lines containing a specific string
+
+
+delete-matching-lines
+delete-non-matching-lines
+delete-duplicate-lines
+
+highlight all occurrences of word in a file 
+highlight-phrase
+highlight-regexp
+highlight-lies-matching-regexp
+
+
+** sort lines :
+1.select a region then call
+  sort-lines(useful);
+  reverse-region 
+
+2.sort-number-fields
+sort-fields(as for fields:separated by space or tabs)
+
+** delete trailing white space in source code 
+
+
+* adjust window 
+** split-window-*
+** delete
+** other-window
+
+* adjust window size 
+** enlarge-window
+** enlarge-window-horizontally
+
+** shrink-window
+** shrink-window-horizontally
+** shrink-window-if-larger-than-buffer
+
+** balance-window
+ you can save the window configuation 
+
+* list buffers
+** list-buffer(ibuffer:is a improved version of list-buffers) 
+(defalias 'list-buffers 'ibuffer)
+** switch-to-buffer
+** kill-buffer
+
+
+* batch operation on bufer
+1.save all unsaved files
+2.close all files of a given dir 
+3.close all java files
+ibuffer
+
+* switch buffer 
+** switch-to-buffer 
+** ido-switch-to-buffe
+
+

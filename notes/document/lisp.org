@@ -1,0 +1,24 @@
+* con 
+(a . b)
+* car
+* cdr
+* sequrnce
+** list 
+()
+*** associative list
+#+BEGIN_SRC emacs-lisp
+;;x is a alist
+(setq x '(("name1" . 1)
+           ("name2" . 2)))
+(assoc "name1" x)
+#+END_SRC
+*** property list
+#+BEGIN_SRC emacs-lisp
+;;xx is property list
+(setq xx '(a 1 b 2))
+(plist-get xx 'b)
+#+END_SRC
+** array
+*** vectory 
+[]
+*** String

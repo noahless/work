@@ -1,0 +1,66 @@
+* lib 
+/lib
+/usr/lib
+* link with external libraries
+use the ar command 
+with the extension .a
+* gcc options
+-l link the .a file automatically(-lNAME wil attemp to link object files with a library file "libNAME.a" in the standard library directories)
+-o filename     output to the file
+-wall waring 
+-c create objects
+-g for debugging
+
+
+** system default standard functions 
+--head
+/usr/local/include
+/usr/include
+--lib
+/usr/local/lib
+/usr/lib
+
+the options -I and -L add new directories to the beginning of the include path and library search path respectively(add the search path)
+gcc -Wall -I/opt/... db.c -lm -o temp.out
+and the environment variable C_INCLUDE_PATH(for c header files) and CPLUS_INCLUDE_PATH(for c++ header files) can added to the search path;(library search path)  
+search these environment variables before the standard default directories
+
+ C_INCLUDE_PATH=.:/opt/lib:/src/lib....    . is current directory
+config  it in ~/.bash_profile
+
+** search orders:
+1.command-line options
+2.environment variables
+3.default system directories
+
+** 
+
+* compiling for debugging 
+-g additional debugging information in files and executables.
+errors from the machine code to the source code
+----GNU Debuger gdb 
+using a debuger also allows the values of variables to be examined while the program is running.
+a null pointor will only cause a problem at run-time .
+whenever the error message "core dumped" is displayed, the operating system should produce a file called core in the current directory used by the program at the time it was terminated 
+in GNU Bash shell the command ulimit -c n controls the maximum size of core files. 0:no core files are produced.
+ulimit -c unlimited 
+
+gdb executable-file core-file
+to investigate the cause of the crash,
+we display the value of the pointer p  using the debugger print command 
+(gdb) print p
+* compiling procedure 
+1. preprocessing  	cpp hello.c > hello.i	by convention,preprocessed files are given the file extension .i
+2. compilation 		gcc -Wall -S hell.i	resulting the .s file(assemble language)
+3. assembly 		as hello.s -o hello.o	resulting the .o file(binary file)
+4. linking		ld -dynamic-linker path-and-filename(.o file)
+** examining the symbol table 
+nm a.out (this table stores the location of functions and variables by name and can be displayed with the nm command)
+T stand for the function defined in the object file.
+U indicates a function which is undefined.
+the most common use of the nm command is to check whether a library contains the definition of a specific function.
+** finding dynamically linked libraries
+ldd a.out (ldd:linked dynamic depends)
+show the depends on the C library
+
+

@@ -1,0 +1,65 @@
+* emacs
+customize-group
+package-list-package
+c+;
+
+* find
+find-function
+find-variable
+find-function-key   
+
+* Todo
+** TODO hello
+   DEADLINE: <2018-06-02 六> 
+   SCHEDULED: <2017-10-27 五>
+* hello
+* auto load
+** load-file
+load one special file
+** load
+load the destination file that is in the load-path(search the destination file)
+** require
+load a package.
+variable:features shows is the package container
+
+provide:   add the feature in features
+
+** auto-load
+load a file only the function is be invoked
+
+* compile
+byte compile file
+
+* functions 
+  save_execursion
+** region-active-p
+   region-begin
+   region-end
+** indent-buffer
+
+* ibuffer
+
+
+* parent
+#+BEGIN_SRC emacs-lisp
+;;----------------------my show parent mode---------------
+(define-advice show-paren-function (:around) (fn) fix-show-paren-function
+  "highlight enclosing parens"
+  (cond ((looking-at-p  "\\s()") (funcall fn))
+	(t (save-execursion (ingore--errors (backward-up-list))
+			    (funcall fn))))
+  )
+#+END_SRC
+
+* imenu
+show all the functions in this file
+
+cousel-imenu
+* iedit
+iedit-mode
+
+* emacs code
+
+* org-mode
+
+

@@ -1,0 +1,95 @@
+have four major compoents: 
+process management i/o device management memory and file management
+* process 
+** there are four principal events that cause processes to be created
+   1. system initialization
+   2. a user request to create a new pocess
+   3. execution of process creation system call by a running process
+   4. initiation of a batch job
+** process terminal
+1. normal
+2. error(voluntary)
+3. fatal error(involuntary)
+4. klled by another process(involuntary)
+** process hirearchies
+process gropu 
+** process states
+1. running(to all)
+2. ready(to running)
+3. blocked(to ready)
+** implementation of processes
+process table(PCB)(some authors call these entries process control blocks)(with one entry per process)
+*** PCB 
+process state 
+program counter 
+stack pointer 
+memory allocation 
+the status of it's open files
+accounting and scheduling information
+alarms 
+other signals
+and everything else about the process that must be saved n
+when the process is switched from running ready state so that it can be restarted later as if it had never been stopped
+**** MINIX 3 structure
+inter-process communication,memory management,and file management are each handled by separate modules within the system.
+so the PCB is partitioned.
+
+| kernel                      | process management         | file management          |
+|-----------------------------+----------------------------+--------------------------|
+| registers                   | pointer to text segment    | umask mask               |
+| program counter             | pointer to data segment    | root directory           |
+| program status word         | pointer to bss segment     | working directory        |
+| stack pointer               | exit status                | file descriptors         |
+| process state               | signal status              | real id                  |
+| current scheduling priority | process id                 | effective uid            |
+| maximum scheduling priority | parent process             | real gid                 |
+| scheduling ticke left       | process gropu              | effective gid            |
+| quantum size                | children's cpu time        | controling tty           |
+| CPU time used               | real uid                   | save area for read/write |
+| Message queue pointers      | effective uid              | system call parameters   |
+| pending signal bits         | real gid                   | various flag bits        |
+| various flag bits           | file info for sharing text |                          |
+| process name                | bitmaps for signals        |                          |
+|                             | various flag bits          |                          |
+|                             | process name               |                          |
+|-----------------------------+----------------------------+--------------------------|
+
+skeleton of what the lowest level of the operating system does when an interrupt occurs
+1. hardware stacks program counter ,etc
+2. hardware loads new program counter from interrupt vector
+3. assembly language procedure saves registers
+4. assembly language procedure sets up new stack 
+5. c interrupt service constructs and sends message
+6. message passing code marks waiting message recipient ready
+7. scheduler decides which process is to run next
+8. c procedure returns to the assembly code
+9. assembly language procedure starts up new current process
+
+
+** threads
+---
+* interprocess communication
+** race conditions 
+read and write
+** critical sections
+how do we avoid race conditions
+1. no two processes may be simultaneously inside their critical regions
+2. no assumptions may be made about speeds or the number of CPUs.
+3. no process running outside it's critical region may block other processes
+4. no process should have to wait forever to enter it's critical region
+** mutual exclusion with busy waiting 
+*** disabling interrupts
+*** lock variables
+*** strict 
+*** TSL (test and set lock)
+#+BEGIN_SRC C
+
+
+#+END_SRC
+*** sleep and weakup
+*** the producer-consumer problem
+the producer :when the buffer is full the procedure have to sleep until the buffer is not full
+*** semaphores
+*** mutexes
+*** monitors
+

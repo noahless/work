@@ -1,0 +1,230 @@
+* git show 
+** git diff --pretty=online <filename>
+** git show <hashcode>
+** git remote show POSTORY name
+
+
+
+* git procedure:
+** git storage
+*** git add
+*** git commit 
+*** git commit -a 
+from the working directory to the history
+** git out
+*** git reset 
+from the history to the stage area
+*** git checkout 
+from the stage area to the working directory
+*** git checkout HEAD
+from the history to the working directory
+
+
+
+
+
+* revote operate
+** show remote address
+git remote -v
+** git clone
+** git pull
+git pull brname 
+** git push
+git push remote_brname local_brname 
+** git 
+
+
+* git log
+** tree show in command line
+*** configuration the commands
+git config --global alias.lg "log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+*** regular git command
+git log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+
+
+* git diff
+contains two parameter:
+default:working directory
+** git diff HEAD 
+diff between working directory and the history
+** git diff --staged
+diff between stage area and the history
+** git diff 
+diff between stage area and the working directory
+
+
+* git keywards
+  master (branch)
+  head
+
+
+* branches 
+** list branches
+git branch
+
+** create a new branch
+git branch branchname
+git branch -b branchname  ----create and switch to the branch
+
+** switch to a new branch
+copy to the working area , default value is copy the stage area to the working directory
+*** git checkout 
+*** git checkout -b    this commands create a branch and switch the branch to the directed branch
+
+** delete the branches
+git branch -d delete the branches that is clean
+git branch -D delete the branches that is not clean
+
+** merge the branches
+git merge br  --merge the branches to the current branch
+git merge --no-ff -m message merge and commit
+git branch --merged    show the branch that is merged
+git branch --no-merged 
+ 
+
+* git init
+** config and look up the configuration
+git config --global user.name username
+git config --global user.email useremail
+git config --global color.ui true
+git config --list
+or change the git config file: ~/.gitconfig
+** initilize
+git init
+git clone link name
+
+
+* look up the configed thing 
+** search the status
+git status
+git status -s former:staged latter:area working directory:
+** differ
+git diff version(head) -- readme.txt
+git diff --cached or git diff --staged  diff between version and staged 
+
+
+** remove from git
+git rm
+git rm --cached filename remove from the staged area
+
+* commit 
+** save the unsaved project and switch to the other project
+git stash
+--this command keep the current working directory clean
+git stash list
+--look up the stash buffer that saved
+# recovery ways:
+1.git stash apply (invoke the top() command and return from the stack) using the git stash drop to delete the stash
+2.git stash pop
+
+** commit changes 
+git commit -m "version describe"
+git commit --amend change the last commit 
+git commit -am commit the changes from the working directory
+** git reset --hard HEAD
+change the version to the HEAD version.
+makeout the commands between reset and checkout
+** list commands history
+git reflog
+** list all commited version
+git log
+git log -p
+git log --pretty=online  show the log format including short,full,fuller and oneline
+for further studuy:
+git log --pretty=format:"%h - %an,%ar : %s"
+
+# synchroniz the version to the stage
+** git reset --hard
+change the current version to the directed version
+** git reset version filename
+synchroniz the file version to the staged file
+# -------------end---------------
+
+
+* online depostry 
+** look up 
+git remote
+** 
+
+* tag
+tag is a string mapping to the directed version
+** list all the tags 
+git tag
+** show directed tag
+git show tagname
+** create tag
+*** create private tag
+git tag -a tagname -m message
+a: annotated
+*** create public tag
+git tag -s tagname -m
+s:signed
+** push tag
+git push (project name)  --tags
+
+# operate the tags 
+** delete tags 
+git tag -d tagname 
+    
+* git ingore
+1.file:   .gitingore
+2.add this file to the 
+
+* git alias
+# git alias is written to the configure 
+** git config --global alias alianame command
+
+* undo operations
+** git reset 
+copy the directed version information to the stage
+
+** git move
+git mv move or rename file (operate the staged area)
+
+
+* commit further
+** tree 
+tree points to a directory that current version contains.
+different version is a parallel directory.
+** parent
+
+* version pointor
+HEAD~ HEAD~~ HEAD~4
+* git cat-file
+** git cat-file -t HEAD 
+for type
+
+** git cat-file -p HEAD 
+for print
+
+** git rev-parse HEAD
+
+* head is a point to the branches
+** head point to the master and the master point to the tree
+** master~4 equals head~4
+** head is a concepted branch but it point to a branch
+
+HEAD~4^code.py
+HEAD^{tree}
+
+git show 
+
+* branch
+** switch to a new branch
+git checkout
+
+** show branch
+git branch
+git branch -d deletename
+git branch -b name
+
+* patch
+
+
+* undo the operations
+** git commit -amend
+** git reset head
+
+
+

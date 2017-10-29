@@ -1,0 +1,14 @@
+data_path=../data
+record_name='record'
+
+# input_file_name=data_path+'/input/'+record_name+'.txt'
+# output_file_name=data_path+'/output/'+record_name
+# error_file_name=data_path+'/error/'+record_name+'.log'
+
+
+# receiver:
+# receiver_name=
+# subject=
+# from=
+# to=
+# content=

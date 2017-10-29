@@ -1,0 +1,117 @@
+* privage
+** useradd
+-g group_name or gid
+-u uid 
+-G gid,....mutiple group
+-c comment
+-d directory
+-m -k copy the skeleton directory to the new home the default skeleton directory is/etc/skel/
+-M not create the home directory
+
+
+equals adduser
+useradd user_name
+
+*** commands
+useradd
+userdel
+usermod
+passwd
+chsh
+chfn
+finger
+id
+change
+** userdel
+-r delete the home directory
+alias userdel="userdel -r "
+
+** usermod
+-u UID
+-g GID
+-d home directory -m copy the file to the new home directory
+-s shell
+-l login name
+-c comment
+-L lock the account
+** chsh 
+change shell
+** passwd
+--stdin
+-l lock 
+-u unlock
+-d delete the passwd
+
+
+
+** id -G -n(name)
+** finger
+** group add
+** gpasswd
+ 
+** newgrp
+alias newgrp="swugrp"
+
+** change
+alias change=pwchange
+passwd management
+-d the latest changed
+-E expired time
+-W waring
+-m  
+-M
+
+
+*** commands
+groupadd
+groupdel
+groupmod
+gpasswd
+** privilege
+chown
+chgrp
+chmod
+
+
+** uid
+   /etc/passwd
+** gid
+   /etc/group
+
+** password
+user:   /etc/shadow
+group:  /etc/shadow
+
+whatis passwd
+man 5 passwd
+** shadow
+
+whatis shadow
+man 5 shadow
+
+
+** chown
+ownername:grpname 
+ownername.grpname
+
+#
+-R recusive(when changing a directory)
+--reference=path to some file(change the group and the owner)
+** chgrp
+#
+-R recusive
+--reference=path to some file
+** chmod
+-R 
+u,g,o u=rwx,g=rwx,o=rwx ugo=rwx
+
+u-x u+x 
+
+* shell profile
+** login shell
+/etc/profile -> /etc/profile.d/*.sh -> ~/.bash_profile -> ~/.bashrc -> /etc/bashrc
+** no login shell
+ ~/.bashrc -> /etc/bashrc -> /etc/profile.d/*.sh
+
+
+nb

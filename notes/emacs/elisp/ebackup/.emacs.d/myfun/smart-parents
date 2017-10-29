@@ -1,0 +1,15 @@
+(define-advice smart-parents (:around (fn) fix-show-parent-function)
+  "hilight enclosing parents"
+
+  (cond ((looking-at-p "\\s(") (funcall fn))
+	(t (save-excursion
+	      (ignore-errors (backward-up-list ))
+	      (funcall fn)))))
+
+
+(defun parenthesis-auto-match()
+    
+    )
+
+(provide 'smart-parents)
+

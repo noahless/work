@@ -1,0 +1,43 @@
+* table of contents
+** greater blocks
+- key::<s tab
+- key::
+
+#+BEGINSROC C
+#include
+#+END_SRC
+names:
+- comment
+- example
+- export
+- verse
+
+** drawers and property drawers
+:properties:
+readonly
+:end:
+:drawername:
+contents
+:end:
+** dynamic blocks
+#+BEGIN: NAME PARAMETERS
+contents
+#+EDN:
+** footnote definitions
+[fn:label] contents
+
+
+* elements
+** clock: timestamp duration
+clock timestamp duration
+- duration:HH:MM
+- clock: deadline scheduled closed
+** comment
+# this is comment
+
+** lined
+ 
+
+
+
+

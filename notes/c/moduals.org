@@ -1,0 +1,24 @@
+* introduction 
+** 
+* interface and implementations
+* atoms
+* exceptions and assertions
+* memory management
+* more memory management
+* lists
+* tables
+* sets
+* dynamic arrays
+* sequences
+* rings
+* bit  vectors
+* formatting
+* low_level strings
+* high_level strings
+* extended_precision
+* arbitrary-precision arithmetic
+* mutiple-precision arithmetic
+* threads
+* interface summary
+
+

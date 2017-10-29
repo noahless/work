@@ -1,0 +1,14 @@
+* class
+** __init__
+** __string__
+** __xxxx
+   private
+** self
+
+
+** __del__
+   del object
+** sys.getrefcount()
+   import sys
+   count:return value-1
+

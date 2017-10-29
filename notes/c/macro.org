@@ -1,0 +1,14 @@
+* Null Pointer
+#+BEGIN_SRC C
+#define NULL_PTR ((void *)0)
+#+END_SRC
+* Concat the strings to choose which fun is invoked
+#+BEGIN_SRC C
+#define FUNCTION(name) VOID FUNC##name##(void)
+#+END_SRC
+* choose functions
+#+BEGIN_SRC C
+#define FUN(choice) \
+switch(choice) case :
+#+END_SRC
+* 

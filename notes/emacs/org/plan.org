@@ -1,0 +1,48 @@
+# *my org-files*
+* do some clean
+** TODO sweep the floor
+** TODO clean the desk
+** TODO wash cloth
+   SCHEDULED: <2017-01-15 日 16:00>
+** TODO make up the room and cloth
+   SCHEDULED: <2016-12-12 一>
+* do exercise
+** TODO running
+** TODO lift
+** TODO up and down
+** TODO taekwondo
+*** TODO press the whole body
+*** TODO adjust the breath
+* do some reading 
+** economic
+*** TODO the intelligent investor
+*** TODO bank and coins 
+*** TODO the economic naturalist
+** computer science
+*** TODO data mining
+*** TODO operation system    
+*** TODO c/c plus plus
+**** TODO c and pointor
+**** TODO c traps and pitfalls
+**** TODO expert c promgramming
+*** TODO python
+*** TODO pl/sql
+*** TODO computer organization and design
+** math
+*** TODO being logical
+*** TODO high level math
+*** TODO distribute math 
+*** TODO summary
+** other reading
+*** TODO paypal wars
+*** TODO the long tail
+*** TODO the zero marginal cost society
+*** TODO intelligent times
+
+* study english
+** TODO ordinary english
+** TODO remember that not know well
+* study emacs
+** TODO elisp
+** TODO org mode
+* weiqi

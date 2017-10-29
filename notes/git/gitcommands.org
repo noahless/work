@@ -1,0 +1,86 @@
+git config --global user.name noah
+git config --global user.email noah@userlc.info
+git config --global color.ui true
+change the .gitconfig file
+emacs ~/.gitconfig
+
+
+echo '*~'>.gitignore
+
+
+git status -s 
+
+git diff
+
+git diff --staged 
+
+git diff HEAD
+--head is a pointor point to the top file in history
+
+
+git reset :copy from the history to the staging area 
+
+git checkout : copy from the staging area to the working directory
+
+git checkout HEAD : copy from the history to the working directory
+
+
+git rm ~ : remove the file from the git
+git rm --cached ~: remove the file in staging area
+
+git mv name1 name2:rename to name2
+
+
+git stash
+git stash list 
+git stash pop
+
+
+
+commit: tree parent author and so on 
+
+what is tree:
+tree
+|_cade.pY
+|_readme
+
+0    1     2      3
+HEAD HEAD~ HEAD~2 HEAD~3 
+
+
+git cat-file  equals   git show 
+
+git cat-file -p HEAD(print the file info)
+
+git cat-file -t commit
+   HEAD
+
+git cat-file -t efdae....
+   tree
+
+git cat-file -p efdae
+   blob  5c......(hashcode)
+
+git rev-parse HEAD
+git rev-parse HEAD~
+git rev-parse master
+git rev-parse master~
+git rev-parse HEAD~4^{tree}
+
+
+
+* git branch :
+git branch  tryideal(create new banch)
+git branch -d tryideal(delete the branch)
+
+git checkout branchname (HEAD point to other branch)
+
+git branch (show branchs)
+*current branch
+ branch 1
+ branch 2
+ branch ``
+
+(git checkout -b )
+
+git merge branchname

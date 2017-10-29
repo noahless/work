@@ -1,0 +1,22 @@
+* content-type:text/html 
+** text/html
+** text/asp
+** text/xml
+** text/css
+** text/plain
+
+* http message
+** request
+*** request head
+**** get
+GET /index.html HTTP/1.1
+HOST: www.baidu.com
+Connection: close/keep alive
+User-Agent: Mozilla/5.0
+Accept-Language: cn
+**** post
+*** response
+** response
+HTTP/1.1 301 Moved Permanently
+Location: http://www.xyz.edu/ee/index.html
+

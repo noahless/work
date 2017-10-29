@@ -1,0 +1,19 @@
+(setq emacs-debug-messages '~/.emacs.d/configurations/packages-init)
+(require 'packages-init)
+(setq emacs-debug-messages "~/.emacs.d/configurations/abbrev-table-init")
+(require 'abbrev-table-init)
+(setq emacs-debug-messages "~/.emacs.d/configurations/keys-init")
+(require 'keys-init)
+(setq emacs-debug-messages "~/.emacs.d/configurations/modes-init")
+(require 'modes-init)
+(setq emacs-debug-messages "~/.emacs.d/configurations/ui-init")
+(require 'ui-init)
+
+
+;;(load-file "~/.emacs.d/configurations/packages-init.elc")
+;;(load-file "~/.emacs.d/configurations/abbrev-table-init.elc")
+;;(load-file "~/.emacs.d/configurations/keys-init.elc")
+;;(load-file "~/.emacs.d/configurations/modes-init.elc")
+;;(load-file "~/.emacs.d/configurations/ui-init.elc")
+
+(provide 'con-org)
